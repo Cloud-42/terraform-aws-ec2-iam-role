@@ -2,7 +2,7 @@
 
 Upon launching the stack the following resources will be created:
 
- * 
+ * IAM Role
 
 ## Dependencies and Prerequisites
  * Terraform v0.12. or higher
@@ -15,7 +15,8 @@ Upon launching the stack the following resources will be created:
 | ``| |
 
 ## Outputs
- * 
+ * role - root IAM Role object
+ * profile - root IAM Profile object
 
 ## Usage
 
