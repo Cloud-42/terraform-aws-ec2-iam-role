@@ -1,4 +1,4 @@
-## Standard VPC build.
+## Create an ec2 IAM Role. 
 
 Upon launching the stack the following resources will be created:
 
