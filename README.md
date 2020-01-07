@@ -31,7 +31,15 @@ Upon launching the stack the following resources will be created:
 To import the module add the following to your TF file:
 ```
 module "role" {
-  source = ""
+  source  = "Cloud-42/ec2-iam-role/aws
+  version = "0.1.0"
+
+  name = "${var.environment}-server-role-"
+
+  policy_arn = [
+    "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM",
+    "arn:aws:iam::aws:policy/AWSCodeDeployDeployerAccess",
+  ]
 }
 ```
 * To initialise the module run: terraform init
