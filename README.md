@@ -31,7 +31,7 @@ Upon launching the stack the following resources will be created:
 To import the module add the following to your TF file:
 ```
 module "role" {
-  source  = "Cloud-42/ec2-iam-role/aws
+  source  = "Cloud-42/ec2-iam-role/aws"
   version = "0.1.0"
 
   name = "${var.environment}-server-role-"
