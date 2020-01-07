@@ -8,6 +8,7 @@ Upon launching the stack the following resources will be created:
  * Terraform v0.12. or higher
  * AWS account
 
+
 ## Variables
 | Variable | Meaning |
 | :------- | :----- |
@@ -17,6 +18,8 @@ Upon launching the stack the following resources will be created:
  * 
 
 ## Usage
+
+ * policy_arn - At least 1 policy_arn must be specified.
 
 To import the module add the following to your TF file:
 ```
