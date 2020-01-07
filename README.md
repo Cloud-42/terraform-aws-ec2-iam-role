@@ -5,7 +5,7 @@ Upon launching the stack the following resources will be created:
  * IAM Role
 
 ## Dependencies and Prerequisites
- * Terraform v0.12. or higher
+ * Terraform v0.12.12 or higher
  * AWS account
 
 
