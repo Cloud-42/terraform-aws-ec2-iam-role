@@ -26,3 +26,15 @@ variable "policy_arn" {
   description = "List of policy ARNs to attached to the role."
   type        = list(string)
 }
+variable "principal_type" {
+  type        = string
+  description = "Principal type for trust identity"
+  default     = "Service"
+}
+variable "principal_identifiers" {
+  type        = list(string)
+  description = "Principal identifier for trust identity"
+  default     = ["ec2.amazonaws.com"]
+}
+
+

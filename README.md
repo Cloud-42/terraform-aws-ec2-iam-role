@@ -27,8 +27,9 @@ Upon launching the stack the following resources will be created:
 | `force_detach_policies`| Allows for policy / policies to be forcibly detached |
 | `path`| IAM role path |
 | `description`| Role description |
-| `policy_arn`| A list of policy ARNs to attached to the role. At least 1 must be specified. |
-
+| `policy_arn`| A list of policy ARNs to attached to the role. At least 1 must be specified |
+| `principal_type` | Principal type for trust identity - Used by trust relationship policy  |
+| `principal_identifiers` | Principal identity for trust identity - Used by trust relationship policy  |
 
 ## Outputs
  * role - root IAM role object
@@ -42,7 +43,9 @@ To import the module add the following to your TF file:
 ```
 module "role" {
   source  = "Cloud-42/ec2-iam-role/aws"
-  version = "0.1.0"
+  version = "2.0.0"
+  principal_type        = "Service"
+  principal_identifiers = ["ec2.amazonaws.com"]
 
   name = "${var.environment}-server-role-"
 
