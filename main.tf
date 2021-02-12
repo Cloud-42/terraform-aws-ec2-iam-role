@@ -12,7 +12,8 @@ resource "aws_iam_role" "this" {
 
 resource "aws_iam_instance_profile" "this" {
   depends_on  = [aws_iam_role.this]
-  name_prefix = substr(var.name, 0, 22)
+  name        = var.name != null ? var.name : null
+  name_prefix = var.name_prefix != null ? substr(var.name_prefix, 0, 22) : null
   path        = var.path
   role        = aws_iam_role.this.name
 }
