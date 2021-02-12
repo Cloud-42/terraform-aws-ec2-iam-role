@@ -1,5 +1,13 @@
+variable "name_prefix" {
+  type        = string
+  description = "The IAM Role name prefix. Conflicts with name. Choose either"
+  default     = null
+}
+
 variable "name" {
-  description = "The IAM Role name."
+  type        = string
+  description = "The IAM Role name. Conflicts with name_prefix. Choose either"
+  default     = null
 }
 
 variable "assume_role_policy" {
@@ -8,6 +16,7 @@ variable "assume_role_policy" {
 }
 
 variable "force_detach_policies" {
+  type        = bool
   description = "Allow policy / policies to be forcibly detached."
   default     = false
 }
@@ -26,11 +35,13 @@ variable "policy_arn" {
   description = "List of policy ARNs to attached to the role."
   type        = list(string)
 }
+
 variable "principal_type" {
   type        = string
   description = "Principal type for trust identity"
   default     = "Service"
 }
+
 variable "principal_identifiers" {
   type        = list(string)
   description = "Principal identifier for trust identity"
